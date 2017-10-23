@@ -27,6 +27,7 @@ web/compiled/
 .sass-cache/
 /node_modules/
 /web/assets/bower/
+/web/assets/gulp/
 
 /bin/symfony_requirements
 web/config.php

@@ -1,0 +1,36 @@
+{
+  "name": "undefined",
+  "version": "1.0.0",
+  "description": "undefined\r =========",
+  "main": "Gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.1",
+    "imagemin-jpegoptim": "^5.0.0",
+    "imagemin-optipng": "^5.2.0",
+    "uglify-js": "^2.6.2"
+  },
+  "devDependencies": {
+    "gulp-bower": "0.0.13",
+    "gulp-inject": "^4.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saromase/undefined.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saromase/undefined/issues"
+  },
+  "homepage": "https://github.com/Saromase/undefined#readme"
+}

@@ -1,3 +1,4 @@
+bin/symfony_requirements
 /web/assetic
 !web/assets/js/app/highchart/themes/gray.js
 !/js/app/highchart/highcharts.js
@@ -29,5 +30,5 @@ web/compiled/
 /web/assets/bower/
 /web/assets/gulp/
 
-bin/symfony_requirements
+
 web/config.php

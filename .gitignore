@@ -29,5 +29,5 @@ web/compiled/
 /web/assets/bower/
 /web/assets/gulp/
 
-/bin/symfony_requirements
+bin/symfony_requirements
 web/config.php

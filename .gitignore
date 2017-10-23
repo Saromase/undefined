@@ -27,3 +27,6 @@ web/compiled/
 .sass-cache/
 /node_modules/
 /web/assets/bower/
+
+/bin/symfony_requirements
+web/config.php

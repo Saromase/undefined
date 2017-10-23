@@ -1,3 +1,18 @@
+#fos_js_routing:
+#    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
 app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin/
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+fos_user:
+    resource: "@ApplicationSonataUserBundle/Resources/config/routing/routing.yml"

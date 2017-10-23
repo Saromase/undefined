@@ -1,0 +1,29 @@
+fos_user_group_list:
+    path: /list
+    methods: [GET]
+    defaults:
+        _controller: FOSUserBundle:Group:list
+
+fos_user_group_new:
+    path: /new
+    methods: [GET, POST]
+    defaults:
+        _controller: FOSUserBundle:Group:new
+
+fos_user_group_show:
+    path: /{groupName}
+    methods: [GET]
+    defaults:
+        _controller: FOSUserBundle:Group:show
+
+fos_user_group_edit:
+    path: /{groupName}/edit
+    methods: [GET, POST]
+    defaults:
+        _controller: FOSUserBundle:Group:edit
+
+fos_user_group_delete:
+    path: /{groupName}/delete
+    methods: [GET]
+    defaults:
+        _controller: FOSUserBundle:Group:delete

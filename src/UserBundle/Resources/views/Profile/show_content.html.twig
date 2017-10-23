@@ -1,0 +1,81 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="sonata-ba-show">
+    <div class="sonata-ba-view">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h4 class="box-title">Général</h4>
+                    </div>
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table">
+                            <tbody>
+                            <tr class="sonata-ba-view-container">
+                                <th>Nom d'utilisateur</th>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                            <tr class="sonata-ba-view-container">
+                                <th>Email</th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 ">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h4 class="box-title">Groupes</h4>
+                    </div>
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table">
+                            <tbody>
+                            <tr class="sonata-ba-view-container">
+                                <th>Groupes</th>
+                                <td>
+                                    <ul class="sonata-ba-show-many-to-many">
+                                        {% for group in user.groups %}
+                                            <li>{{ group.name }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 ">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h4 class="box-title">Profil</h4>
+                    </div>
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table">
+                            <tbody>
+                            <tr class="sonata-ba-view-container">
+                                <th>Date de naissance</th>
+                                <td>{{ user.dateOfBirth|date("d/m/Y") }}</td>
+                            </tr>
+                            <tr class="sonata-ba-view-container">
+                                <th>Prénom</th>
+                                <td>{{ user.firstname }}</td>
+                            </tr>
+                            <tr class="sonata-ba-view-container">
+                                <th>Nom</th>
+                                <td>{{ user.lastname }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

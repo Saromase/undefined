@@ -1,0 +1,21 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block header %}
+    <div class="sticky-wrapper"><nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Mon profil</a>
+                </div>
+                <div class="navbar-header pull-right">
+                    <a href="{{ path('fos_user_profile_edit') }}" class="navbar-brand">Modifier mon profil</a>
+                </div>
+            </div>
+        </nav></div>
+{% endblock %}
+
+
+{% block body %}
+    {% include "FOSUserBundle:Profile:show_content.html.twig" %}
+{% endblock body%}

@@ -1,0 +1,26 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="login-box">
+    <div class="login-logo">
+        <a href="{{ path('homepage') }}"><b>Isolonice</b>Services</a>
+    </div>
+    <div class="login-box-body">
+        {% if invalid_username is defined %}
+            <div class="alert alert-danger">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</div>
+        {% endif %}
+        <p class="login-box-msg">{{ 'resetting.request.submit'|trans({}) }}</p>
+        <form action="{{ path('fos_user_resetting_send_email') }}" method="post" role="form" class="fos_user_resetting_request">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" id="username"  name="username" required="required"
+                       placeholder="{{ 'resetting.request.username'|trans({})|replace({':': ''}) }}"/>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">{{ 'resetting.request.submit'|trans({}) }}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

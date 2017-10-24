@@ -12,7 +12,7 @@ bin/symfony_requirements
 /var/sessions/*
 !var/sessions/.gitkeep
 !/var/perm.sh
-!var/SymfonyRequirements.php
+var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
 *~

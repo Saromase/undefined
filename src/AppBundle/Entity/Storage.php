@@ -31,9 +31,9 @@ class Storage
     /**
      * @var int
      *
-     * @ORM\Column(name="lenght", type="integer")
+     * @ORM\Column(name="length", type="integer")
      */
-    private $lenght;
+    private $length;
 
     /**
      * @var int
@@ -78,27 +78,27 @@ class Storage
     }
 
     /**
-     * Set lenght
+     * Set length
      *
-     * @param integer $lenght
+     * @param integer $length
      *
      * @return Storage
      */
-    public function setLenght($lenght)
+    public function setlength($length)
     {
-        $this->lenght = $lenght;
+        $this->length = $length;
 
         return $this;
     }
 
     /**
-     * Get lenght
+     * Get length
      *
      * @return int
      */
-    public function getLenght()
+    public function getlength()
     {
-        return $this->lenght;
+        return $this->length;
     }
 
     /**
@@ -125,4 +125,3 @@ class Storage
         return $this->price;
     }
 }
-

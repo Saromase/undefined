@@ -138,11 +138,10 @@ fos_user:
         sender_name: Undefined
     registration:
         form:
-          type: UserBundle\Form\RegistrationType
+          type: Application\Sonata\UserBundle\Form\RegistrationType
     group:
         group_class:   Application\Sonata\UserBundle\Entity\Group
         group_manager: sonata.user.orm.group_manager                    # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
 
     service:
         user_manager: sonata.user.orm.user_manager                      # If you're using doctrine orm (use sonata.user.mongodb.user_manager for mongodb)
-

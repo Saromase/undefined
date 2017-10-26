@@ -1,0 +1,6 @@
+<h1>Bienvenue sur la page du marché</h1>
+{% for product in products %}
+    <h1>{{ product.name}}</h1>
+    <p>{{ product.price}}</p>
+
+{% endfor %}

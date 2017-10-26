@@ -16,7 +16,7 @@ class MarketController extends Controller
         $repository = $this->getDoctrine()->getRepository(Product::class);
         $products = $repository->findAll();
 
-        return $this->render('market/tier_one.html.twig', [
+        return $this->render('AppBundle:Market:tier_one.html.twig', [
             'products' => $products
         ]);
     }

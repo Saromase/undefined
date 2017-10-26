@@ -49,6 +49,14 @@ class Product
      */
     private $price;
 
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="variation", type="integer")
+     */
+    private $variation;
+
     /**
      * @var int
      *
@@ -186,5 +194,28 @@ class Product
     {
         return $this->tier;
     }
-}
 
+    /**
+     * Set variation
+     *
+     * @param integer $variation
+     *
+     * @return Product
+     */
+    public function setVariation($variation)
+    {
+        $this->variation = $variation;
+
+        return $this;
+    }
+
+    /**
+     * Get variation
+     *
+     * @return int
+     */
+    public function getVariation()
+    {
+        return $this->variation;
+    }
+}

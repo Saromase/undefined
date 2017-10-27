@@ -1,0 +1,62 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Maps_red
+ * Date: 06/02/2017
+ * Time: 19:06
+ */
+
+$pwd = basename(getcwd());
+if (stripos($pwd, "undefined") === false) {
+    exit("Error ! Please run this script from the base of the project\n");
+}
+$empty = true;
+
+
+$commands = [
+    "--pull" => "git pull",
+    "--dump-sql" => "php bin/console doctrine:schema:update --dump-sql",
+    "--force" => "php bin/console doctrine:schema:update --force",
+    "--sass-dev" => "gump sass-dev",
+    "--sass-prod" => "gump sass-prod",
+    "--clear-cache-prod" => "php bin/console cache:clear --no-warmup --env=prod",
+    "--composer" => "composer install",
+];
+
+$commands["--full"] = $commands;
+
+$commands["--prod"] = [
+    "--pull" => "git pull",
+    "--sass-dev" => "gump sass-dev",
+    "--sass-prod" => "gump sass-prod",
+    "--clear-cache-prod" => "php bin/console cache:clear --no-warmup --env=prod",
+    "--assets-install" => "php bin/console assets:install --symlink"
+];
+
+$commands['--full-prod'] = array_merge($commands["--prod"], $commands["--full"]);
+
+unset($argv[0]);
+
+foreach ($argv as $flag) {
+    if (in_array($flag, array_keys($commands))) {
+        $empty = false;
+        execute($commands[$flag]);
+    }
+}
+
+function execute($command)
+{
+    if (is_array($command)) {
+        foreach ($command as $cmd) {
+            execute($cmd);
+        }
+    } else {
+        echo shell_exec($command);
+    }
+
+}
+
+if ($empty) {
+    echo "List of flags : " . implode(", ", array_keys($commands));
+}

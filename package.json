@@ -22,7 +22,8 @@
   },
   "scripts": {
     "build": "bower install --allow-root",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "sonata-build": "bower install ./vendor/sonata-project/admin-bundle/bower.json --allow-root"
   },
   "repository": {
     "type": "git",

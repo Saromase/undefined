@@ -7,7 +7,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: fr_FR
+    locale: fr
 
 framework:
     #esi: ~
@@ -117,7 +117,7 @@ sonata_admin:
                 type: sonata.admin.block.admin_list
                 roles: [ROLE_ADMIN]
     title:                'Undefined'
-    title_logo:           assets/img/default/logo.png
+#    title_logo:           assets/img/default/logo.png
     templates:
         layout:           'AppBundle::standard_layout.html.twig'
 

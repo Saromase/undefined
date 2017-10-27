@@ -1,0 +1,11 @@
+services:
+  app.admin.product:
+      class: AppBundle\Admin\ProductAdmin
+      arguments: [~, AppBundle\Entity\Product, ~]
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: Admin, label: Product }
+  app.admin.storage:
+      class: AppBundle\Admin\StorageAdmin
+      arguments: [~, AppBundle\Entity\Storage, ~]
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: Admin, label: Storage }

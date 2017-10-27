@@ -8,7 +8,7 @@
  */
 
 $pwd = basename(getcwd());
-if (stripos($pwd, "undefined") === false) {
+if (stripos($pwd, "undefined") === false && stripos($pwd, "application") === false) {
     exit("Error ! Please run this script from the base of the project\n");
 }
 $empty = true;
@@ -35,6 +35,20 @@ $commands["--prod"] = [
 ];
 
 $commands['--full-prod'] = array_merge($commands["--prod"], $commands["--full"]);
+
+$commands['--refresh-db'] = [
+    "--drop-db" => "php bin/console doctrine:database:drop --force --if-exists",
+    "--create-db" => "php bin/console doctrine:database:create",
+    "--update-db" => "php bin/console doctrine:schema:update --force",
+    "--load-db" => "php bin/console doctrine:fixtures:load -y",
+    "--create-user" => "php bin/console fos:user:create admin admin@admin.fr discord --super-admin"
+];
+
+$commands['--refresh-db-docker'] = [
+    "--update-db" => "docker-compose exec php-fpm php bin/console doctrine:schema:update --force",
+    "--load-db" => "docker-compose exec php-fpm php bin/console doctrine:fixtures:load -q",
+    "--create-user" => "docker-compose exec php-fpm php bin/console fos:user:create admin admin@admin.fr discord --super-admin"
+];
 
 unset($argv[0]);
 

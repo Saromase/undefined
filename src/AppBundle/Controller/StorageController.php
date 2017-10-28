@@ -13,52 +13,22 @@ use AppBundle\Entity\Storage;
 class StorageController extends Controller
 {
 
-      // public function __construct()
-      // {
-      //     $this->middleware('auth');
-      // }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
-      /**
-       * @Route('/storage', name='storage')
-       * @return Factory|View
-       */
-      public function displayStorages()
-      {
-          $playerStorage = $this->getUser()->getStorage();
-          $inventory = $this->getUser()->getInventory();
-          $playerMoney = $this->getUser()->getMoney();
-          $playerStorageId = $playerStorage->getId();
+    /**
+     * @Route("/storage")
+     * @return Factory|View
+     */
+    public function displayStorages()
+    {
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Storage");
+        $storage = $repository->findAll();
 
-          // On récupére le dernier storage
-          $lastStorage = Storage::get()->last();
-
-          if ($lastStorage === $this->getUser()->getStorage()) {
-              return $this->render('storage.html.twig', [
-                  'storage' => $playerStorage,
-                  'inventory' => $inventory
-              ]);
-          } else {
-              // id du futur storage
-              $futureStorageId = $playerStorageId + 1;
-
-              // On récupère la valeur de l'amélioration du storage
-              $upgradePrice = Storage::findOneById($futureStorageId)->getPrice();
-              // On verifie si il possede un inventaire si il est vide on lui met un message
-              if ($inventory->isEmpty()) {
-                  session()->flash('warning', 'Vous n\'avez aucun produit !');
-                  return $this->render('storage.html.twig', [
-                      'storage' => $playerStorage,
-                      'inventory' => $inventory,
-                      'playerMoney' => $playerMoney,
-                      'upgradePrice' => $upgradePrice
-                  ]);
-              } else {
-                  return $this->render('storage.html.twig', [
-                      'storage' => $playerStorage,
-                      'inventory' => $inventory,
-                      'playerMoney' => $playerMoney,
-                      'upgradePrice' => $upgradePrice
-                  ]);
-              }
-          }
-      }}
+        return $this->render('AppBundle:Storage:storage.html.twig', [
+            'storage' => $storage
+        ]);
+    }
+}

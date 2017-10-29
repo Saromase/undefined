@@ -13,7 +13,7 @@ class MarketController extends Controller
      */
     public function index()
     {
-        $repository = $this->getDoctrine()->getRepository(Product::class);
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Product");
         $products = $repository->findAll();
 
         return $this->render('AppBundle:Market:tier_one.html.twig', [

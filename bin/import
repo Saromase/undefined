@@ -37,10 +37,8 @@ $commands["--prod"] = [
 $commands['--full-prod'] = array_merge($commands["--prod"], $commands["--full"]);
 
 $commands['--refresh-db'] = [
-    "--drop-db" => "php bin/console doctrine:database:drop --force --if-exists",
-    "--create-db" => "php bin/console doctrine:database:create",
     "--update-db" => "php bin/console doctrine:schema:update --force",
-    "--load-db" => "php bin/console doctrine:fixtures:load -y",
+    "--load-db" => "php bin/console doctrine:fixtures:load",
     "--create-user" => "php bin/console fos:user:create admin admin@admin.fr discord --super-admin"
 ];
 

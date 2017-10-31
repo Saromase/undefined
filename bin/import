@@ -18,8 +18,8 @@ $commands = [
     "--pull" => "git pull",
     "--dump-sql" => "php bin/console doctrine:schema:update --dump-sql",
     "--force" => "php bin/console doctrine:schema:update --force",
-    "--sass-dev" => "gump sass-dev",
-    "--sass-prod" => "gump sass-prod",
+    "--sass-dev" => "gulp sass-dev",
+    "--sass-prod" => "gulp sass-prod",
     "--clear-cache-prod" => "php bin/console cache:clear --no-warmup --env=prod",
     "--composer" => "composer install",
 ];
@@ -28,8 +28,8 @@ $commands["--full"] = $commands;
 
 $commands["--prod"] = [
     "--pull" => "git pull",
-    "--sass-dev" => "gump sass-dev",
-    "--sass-prod" => "gump sass-prod",
+    "--sass-dev" => "gulp sass-dev",
+    "--sass-prod" => "gulp sass-prod",
     "--clear-cache-prod" => "php bin/console cache:clear --no-warmup --env=prod",
     "--assets-install" => "php bin/console assets:install --symlink"
 ];

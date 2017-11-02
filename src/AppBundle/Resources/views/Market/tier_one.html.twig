@@ -1,6 +1,14 @@
-<h1>Bienvenue sur la page du marché</h1>
-{% for product in products %}
-    <h1>{{ product.name}}</h1>
-    <p>{{ product.price}}</p>
+{% extends 'AppBundle:Market:base_market.html.twig' %}
 
-{% endfor %}
+{% block title %} Market {% endblock %}
+
+{% block description %}Page du marché{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue sur la page du marché</h1>
+    {% for product in products %}
+        <h1>{{ product.name}}</h1>
+        <p>{{ product.price}}</p>
+    {% endfor %}
+
+{% endblock %}

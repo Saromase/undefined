@@ -1,0 +1,131 @@
+.navbar-default {
+  background-color: #323232;
+  border-color: transparent; }
+  .navbar-default .navbar-brand {
+    color: #eee; }
+  .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #eb8b4d; }
+  .navbar-default .navbar-nav li a {
+    color: #eee; }
+  .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:focus {
+    color: #eb8b4d; }
+
+#home .panel-body #money {
+  float: left; }
+#home .panel-body #inventory {
+  float: right; }
+
+#market .flex-container {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  #market .flex-container .flex-item {
+    width: 210px;
+    background: #b1b1b1;
+    color: #000;
+    margin: 10px; }
+    #market .flex-container .flex-item form {
+      width: 33%;
+      margin-left: 15%;
+      margin-bottom: 5%;
+      float: left; }
+
+#storage .row .items {
+  height: 460px;
+  overflow-x: hidden; }
+
+.navbar-vertical {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 150px;
+  margin-top: -22px;
+  background-color: #00497d;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  z-index: 10; }
+  .navbar-vertical .navbar {
+    border: 0 solid transparent; }
+    .navbar-vertical .navbar a {
+      color: #eee; }
+    .navbar-vertical .navbar a:hover {
+      background-color: #3d637d; }
+  .navbar-vertical #reduce {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    height: 40px;
+    width: 40px;
+    background-color: #00497d;
+    border-radius: 50%;
+    border: 0 solid transparent; }
+    .navbar-vertical #reduce .fa {
+      position: absolute;
+      top: calc(50% - 7px);
+      left: 50%;
+      color: #eee; }
+    .navbar-vertical #reduce .fa-plus {
+      display: none; }
+
+.main {
+  background-color: #fff; }
+
+#admin {
+  width: calc(100% - 150px);
+  float: left;
+  height: 100%;
+  padding-left: 50px;
+  padding-right: 20px;
+  overflow-x: hidden; }
+  #admin .jumbottron {
+    position: relative;
+    margin: -22px -20px 20px -50px;
+    padding: 30px 50px;
+    background-color: #dedede; }
+    #admin .jumbottron h1 {
+      color: #474747;
+      font-size: 75px; }
+    #admin .jumbottron p {
+      color: #474747;
+      margin-top: -20px; }
+      #admin .jumbottron p span {
+        color: #00497d; }
+    #admin .jumbottron .options {
+      position: absolute;
+      bottom: 20px;
+      right: 30px; }
+
+body, html {
+  width: 100%;
+  height: 100%; }
+  body #app, html #app {
+    height: calc(100% - 51px); }
+
+.main {
+  margin-top: -22px;
+  background-size: cover; }
+  .main h1 {
+    color: #fff; }
+  .main h2 {
+    color: #333; }
+  .main .row {
+    position: relative;
+    height: 85%;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 7px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333; }
+    .main .row p {
+      padding-left: 4px; }
+
+.btn-primary {
+  background-color: #eb8b4d;
+  border-color: #bd904e; }
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #cb733a;
+  border-color: #bd904e; }
+
+/*# sourceMappingURL=style.css.map */

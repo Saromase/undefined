@@ -28,7 +28,7 @@ class StorageController extends Controller
         $storage = $repository->findAll();
 
         return $this->render('AppBundle:Storage:storage.html.twig', [
-            'storage' => $storage
+            'storage' => $storage[0]
         ]);
     }
 }
